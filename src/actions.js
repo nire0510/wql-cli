@@ -1,4 +1,4 @@
-import wql from '../../package/build/index.js';
+import wql from '@nire0510/wql';
 
 export function getExamples() {
   const examples = [
@@ -20,7 +20,7 @@ export function getExamples() {
 }
 
 export async function runQuery(query, options) {
-  const output = await wql.default(query, options);
+  const output = await wql(query, options);
 
   return output;
 }
