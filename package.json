@@ -1,0 +1,27 @@
+{
+  "name": "wqlcli",
+  "version": "1.0.0",
+  "description": "Query the web with SQL like syntax from the command line",
+  "main": "index.js",
+  "type": "module",
+  "bin": {
+    "wql": "./index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "keywords": [
+    "scraper",
+    "web scraping",
+    "query language",
+    "query"
+  ],
+  "author": "Nir Elbaz",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^5.2.0",
+    "commander": "^10.0.0",
+    "ora": "^6.1.2"
+  }
+}
