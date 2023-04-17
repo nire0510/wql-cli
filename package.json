@@ -13,7 +13,7 @@
     "prepare": "npm run build",
     "version": "git add -A src",
     "preversion": "npm run build",
-    "postversion": "git push && git push --tags",
+    "postversion": "git push && git push --tags; npm publish .",
     "build:dev": "webpack --mode=development",
     "build:prod": "webpack --mode=production --node-env=production",
     "watch": "webpack --watch"
