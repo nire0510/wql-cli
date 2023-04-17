@@ -1,21 +1,22 @@
-import os from 'os';
-import fs from 'fs';
-import path from 'path';
+const os = require('os');
+const fs = require('fs');
+const path = require('path');
 
-export function generateTempFilePath(ext) {
-  const filepath = path.join(os.tmpdir(), `${Date.now().toString()}.${ext}`);
+module.exports = {
+  generateTempFilePath: function (ext) {
+    const filepath = path.join(os.tmpdir(), `${Date.now().toString()}.${ext}`);
 
-  return filepath;
-}
+    return filepath;
+  },
+  writeFile: async function (filepath, content) {
+    return new Promise((resolve, reject) => {
+      fs.writeFile(filepath, content, (error) => {
+        if (error) {
+          return reject(error);
+        }
 
-export async function writeFile(filepath, content) {
-  return new Promise((resolve, reject) => {
-    fs.writeFile(filepath, content, (error) => {
-      if (error) {
-        return reject(error);
-      }
-
-      resolve(filepath);
+        resolve(filepath);
+      });
     });
-  });
-}
+  },
+};

@@ -65,9 +65,5 @@ export function postValidate(properties: Property[], where: Where): boolean {
     throw new Error('Special presets and selectors are not supported together');
   }
 
-  if (where.selectors.length > 1) {
-    throw new Error('Only one selector is supported');
-  }
-
   return true;
 }
