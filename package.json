@@ -12,6 +12,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "prepare": "npm run build",
     "version": "git add -A src",
+    "preversion": "npm run build",
     "postversion": "git push && git push --tags",
     "build:dev": "webpack --mode=development",
     "build:prod": "webpack --mode=production --node-env=production",

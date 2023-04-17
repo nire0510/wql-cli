@@ -25,15 +25,18 @@ program
   .description(pkg.description)
   .version(pkg.version)
   .addHelpText('after', function () {
-    console.log();
-    console.log('Examples:');
     const examples = actions.getExamples();
 
+    console.log();
+    console.log(chalk.underline('Examples:'));
+    console.log();
     examples.forEach((example) => {
       console.log(chalk.bold(`? ${example.description}:`));
       console.log(chalk.green(`> ${example.code}`));
       console.log();
     });
+
+    console.log('ℹ For more information about the query syntax, pleas visit: https://www.npmjs.com/package/@nire0510/wql#syntax');
   });
 
 program
