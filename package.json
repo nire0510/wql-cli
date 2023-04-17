@@ -3,7 +3,6 @@
   "version": "1.0.3",
   "description": "Query the web with SQL like syntax from your terminal",
   "preferGlobal": true,
-  "private": true,
   "bin": {
     "wql": "./bin/wql.js"
   },
