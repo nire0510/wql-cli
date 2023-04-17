@@ -27,7 +27,7 @@
   "author": "Nir Elbaz",
   "license": "MIT",
   "dependencies": {
-    "@nire0510/wql": "^1.0.0-alpha.9",
+    "@nire0510/wql": "*",
     "chalk": "^4.1.2",
     "commander": "^10.0.1",
     "ora": "^5.4.1"
