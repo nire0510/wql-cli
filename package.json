@@ -9,9 +9,9 @@
   "scripts": {
     "build": "webpack --mode=production --node-env=production",
     "start": "node bin/wql.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "version": "git add -A src",
-    "preversion": "npm run build",
+    "test": "echo \"WARN: no test specified\"",
+    "version": "git add -A src; git add -A dist",
+    "preversion": "npm run build & npm test",
     "postversion": "git push && git push --tags; npm publish .",
     "build:dev": "webpack --mode=development",
     "build:prod": "webpack --mode=production --node-env=production",
