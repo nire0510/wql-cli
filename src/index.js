@@ -21,7 +21,7 @@ const program = new Command();
 const spinner = ora('wait...');
 
 program
-  .name(pkg.name)
+  .name('wql')
   .description(pkg.description)
   .version(pkg.version)
   .addHelpText('after', function () {
