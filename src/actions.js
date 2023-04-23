@@ -4,16 +4,20 @@ module.exports = {
   getExamples: function () {
     const examples = [
       {
-        description: 'Get page source code',
+        description: 'Get page source code of Google.com',
         code: `wql 'SELECT html FROM "https://www.google.com";'`,
       },
       {
-        description: 'Get all images URLs with a width greater than 100px and a height between 200px and 300px',
-        code: `wql 'SELECT attr(src) FROM "https://www.google.com" WHERE width > "100px" AND height BETWEEN "200px" AND "300px";'`,
+        description: 'Get all images URLs with 56px width from BBC',
+        code: `wql 'SELECT attr("src") AS img_src, style("width") FROM "https://www.bbc.com" WHERE selector = "img" AND style("width") = "56px";'`,
       },
       {
-        description: 'Get class names of all images',
-        code: `wql 'SELECT attr("class") AS img_class FROM "https://www.google.com" WHERE selector = "img";'`,
+        description: 'Get class names of all DIVs from Google',
+        code: `wql 'SELECT attr("class") AS img_class FROM "https://www.google.com" WHERE selector = "div";'`,
+      },
+      {
+        description: 'Get the biggest title from CNN & BBC',
+        code: `wql 'SELECT text, style("fontSize") FROM "https://edition.cnn.com/", "https://www.bbc.com/" WHERE selector IN ("h1", "h2", "h3", "h4", "h5", "h6") ORDER BY style("fontSize") DESC LIMIT 1;'`,
       },
     ];
 
