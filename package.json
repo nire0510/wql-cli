@@ -1,6 +1,6 @@
 {
   "name": "@nire0510/wql-cli",
-  "version": "1.0.11",
+  "version": "1.0.10",
   "description": "Query the web with SQL like syntax from your terminal",
   "preferGlobal": true,
   "bin": {
@@ -10,7 +10,7 @@
     "build": "webpack --mode=production --node-env=production",
     "start": "node bin/wql.js",
     "test": "echo \"WARN: no test specified\"",
-    "version": "git add -A src; git add -A dist",
+    "version": "git add --all; git add -A dist",
     "preversion": "npm run build && npm test",
     "postversion": "git push && git push --tags; npm publish .",
     "build:dev": "webpack --mode=development",
@@ -26,7 +26,7 @@
   "author": "Nir Elbaz",
   "license": "MIT",
   "dependencies": {
-    "@nire0510/wql": "^1.0.8",
+    "@nire0510/wql": "^1.0.9",
     "chalk": "^4.1.2",
     "commander": "^10.0.1",
     "ora": "^5.4.1"
