@@ -1,6 +1,6 @@
 {
   "name": "@nire0510/wql-cli",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "Query the web with SQL like syntax from your terminal",
   "preferGlobal": true,
   "bin": {
