@@ -10,7 +10,7 @@
   "scripts": {
     "start": "node bin/wql.js",
     "test": "echo \"WARN: no test specified\"",
-    "version": "git add --all; git add -A dist",
+    "version": "git add --all",
     "preversion": "npm install && npm test",
     "postversion": "git push && git push --tags; npm publish ."
   },
