@@ -1,14 +1,15 @@
 #! /usr/bin/env node
 
-const chalk = require('chalk');
-const { Command } = require('commander');
-const { exec } = require('child_process');
-const fs = require('fs');
-const ora = require('ora');
-const path = require('path');
-const actions = require('./actions.js');
-const fsUtils = require('./utils/fs.js');
-const log = require('./utils/logger.js');
+import chalk from 'chalk';
+import { Command } from 'commander';
+import { exec } from 'child_process';
+import { readFileSync } from 'fs';
+import { dirname, join } from 'path';
+import ora from 'ora';
+import { fileURLToPath } from 'url';
+import * as actions from './actions.js';
+import * as fsUtils from './utils/fs.js';
+import log from './utils/logger.js';
 
 // process.on('uncaughtException', () => {
 process.on('UnhandledPromiseRejectionWarning', () => {
@@ -16,7 +17,8 @@ process.on('UnhandledPromiseRejectionWarning', () => {
   process.exit(-1);
 });
 
-const pkg = JSON.parse(fs.readFileSync(path.join(__dirname, '../package.json')));
+const __dirname = dirname(fileURLToPath(import.meta.url));
+const pkg = JSON.parse(readFileSync(join(__dirname, '../package.json')));
 const program = new Command();
 const spinner = ora('wait...');
 

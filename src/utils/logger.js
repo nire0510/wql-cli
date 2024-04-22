@@ -1,6 +1,6 @@
-const fsUtils = require('./fs.js');
+import * as fsUtils from './fs.js';
 
-module.exports = async function log (content) {
+export default async function log(content) {
   const filepath = await fsUtils.writeFile(fsUtils.generateTempFilePath('log'), content);
 
   return filepath;
